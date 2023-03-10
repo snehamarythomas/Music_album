@@ -1,0 +1,35 @@
+.cards{
+    display: flex;
+    align-items: center;
+    justify-content:space-evenly;
+    flex-wrap: wrap;
+    overflow-y: auto;
+    
+}
+ 
+.dataListing{
+    overflow-y: auto;  
+    border: 3px solid grey;
+    width: 225px;
+    min-height:270x;
+    margin-bottom: 15px;
+    height:270px;
+}
+
+.images{
+    width: 225px;
+    height:130px;
+}
+
+.links{
+    text-align: center;
+    color: black;
+    align-items: center;
+    bottom: 5px;
+}
+.artistNames{
+    text-align: center;
+}
+.kinds{
+    text-align: center;
+}

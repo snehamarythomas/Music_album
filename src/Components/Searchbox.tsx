@@ -1,7 +1,6 @@
 import React from 'react'
 import Paper from '@mui/material/Paper';
 import InputBase from '@mui/material/InputBase';
-import Divider from '@mui/material/Divider';
 import IconButton from '@mui/material/IconButton';
 import SearchIcon from '@mui/icons-material/Search';
 import CloseIcon from '@mui/icons-material/Close';
@@ -12,6 +11,7 @@ import SearchList from './SearchList';
 import './Searchbox.css';
 
 
+
 import { sliderClasses } from '@mui/material';
 
 function Searchbox() {
@@ -19,7 +19,10 @@ function Searchbox() {
   const [inputText,setinputText] = useState('')
   const [noResults,setnoResults] = useState(false)
   
+  
   return (
+   
+
     <div className = "Searchbox">   
      <Paper 
       component="form"
@@ -36,7 +39,7 @@ function Searchbox() {
         inputProps={{ 'aria-label': 'search google maps' }}
       />
       <IconButton type="button" sx={{ p: '10px' }} aria-label="search" onClick={()=>{
-        axios.get('https://itunes.apple.com/search?term='+inputText+'&limit=20').then((response)=>{
+        axios.get('https://itunes.apple.com/search?term='+inputText).then((response)=>{
           setlist(response.data.results)
          if(response.data.results.length===0){
           setnoResults(true) 
@@ -68,6 +71,8 @@ function Searchbox() {
    
        
   </div>
+
+
   )
 }
 

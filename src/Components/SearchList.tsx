@@ -7,6 +7,7 @@ import './SearchList.css';
 interface SearchList{
 }
 
+
 function SearchList(props:any) {
 
   return (

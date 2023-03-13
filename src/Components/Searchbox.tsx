@@ -8,7 +8,7 @@ import CloseIcon from '@mui/icons-material/Close';
 import {useState} from 'react';
 import { $CombinedState } from 'redux';
 import axios from 'axios';
-import SearchList from './SearchList';
+import SearchList from './SearchList'; 
 import './Searchbox.css';
 
 

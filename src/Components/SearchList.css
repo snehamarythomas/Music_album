@@ -9,7 +9,7 @@
  
 .dataListing{
     overflow-y: auto;  
-    border: 3px solid grey;
+    border: 3px solid grey; 
     width: 225px;
     min-height:270x;
     margin-bottom: 15px;

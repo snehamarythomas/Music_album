@@ -1,22 +1,16 @@
-import React from 'react'
+
 import Paper from '@mui/material/Paper';
 import InputBase from '@mui/material/InputBase';
 import IconButton from '@mui/material/IconButton';
 import SearchIcon from '@mui/icons-material/Search';
 import CloseIcon from '@mui/icons-material/Close';
 import { useState } from 'react';
-import { $CombinedState } from 'redux';
-import axios from 'axios';
 import SearchList from './SearchList';
 import './SearchBox.css';
-// import {useSelector,useDispatch} from 'react-redux';
 import { getSearch } from '../searchSlice';
-import { sliderClasses } from '@mui/material';
 import { useAppDispatch, useAppSelector } from '../../../app/hooks';
 import LinearProgress from '@mui/material/LinearProgress';
-import Box from '@mui/material/Box';
-
-
+import Stack from '@mui/material/Stack';
 
 function Searchbox() {
 
@@ -24,10 +18,7 @@ function Searchbox() {
   const searchList = useAppSelector((state: any) => state.search?.searchData?.results);
   const searchStatus = useAppSelector((state: any) => state.search?.status);
 
-
-  // const [list, setlist] = useState<any>([])
   const [inputText, setinputText] = useState('')
-  // const [noResults, setnoResults] = useState(false) 
 
 
   return (
@@ -63,9 +54,9 @@ function Searchbox() {
 
 
       {searchList?.length > 0 ? (<SearchList resultList={searchList} inputValue={inputText} />) : ''}
-      {searchStatus === "pending" ? (<Box sx={{ width: '100%', mt:20 }}>
-        <LinearProgress />
-      </Box>) : ''}
+      {searchStatus === "pending" ? (<Stack sx={{ width: '100%', color: 'grey.500', mt: 20 }} spacing={2}>
+        <LinearProgress color="inherit" />
+      </Stack>) : ''}
 
 
       {searchList?.length === 0 ? <h2 className='noResult'>'Sorry, no results found!'</h2> : ''}

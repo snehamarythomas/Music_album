@@ -1,4 +1,4 @@
-import React from 'react'
+
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
@@ -6,6 +6,7 @@ import './SearchList.css';
 import InfiniteScroll from 'react-infinite-scroll-component';
 import { useState } from 'react';
 import MusicData from '../../../models/dataModel';
+import PlayCircleOutlineIcon from '@mui/icons-material/PlayCircleOutline';
 
 interface SearchList {
 }
@@ -37,11 +38,11 @@ function SearchList(props: any) {
                   <img src={obj.artworkUrl100} className='images' /> 
                 </a>
 
-                <ListItem disablePadding>    <ListItemText primary={obj.artistName} className='artistNames' /></ListItem>
+                <ListItem disablePadding>    <ListItemText sx={{ color:'white' }} primary={obj.artistName} className='artistNames' /></ListItem>
 
-                <ListItem disablePadding >    <ListItemText primary={obj.kind} className='kinds' /></ListItem>
+                <ListItem disablePadding >    <ListItemText sx={{ color:'white' }} primary={obj.kind} className='kinds' /></ListItem>
 
-                <a href={obj.previewUrl} className='links'><ListItem disablePadding>   <ListItemText className='links' primary='Play in full screen' /></ListItem></a>
+                <a href={obj.previewUrl}  ><PlayCircleOutlineIcon sx={{ fontSize: "50px"  }} className='playButton'/></a>
 
               </List>
 

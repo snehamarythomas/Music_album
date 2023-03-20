@@ -1,15 +1,5 @@
-import { ActionTypes } from '@mui/base';
+
 import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
-// import { RootState, AppThunk } from '../../app/store';
-// import { fetchCount } from './counterAPI';
-
-// export interface SearchState {
-//   value: number;
-//   status: 'idle' | 'loading' | 'failed';
-// }
-
-import axios from "axios";
-import Data from "../../models/dataModel";
 import { getMusicData } from './services/axiosServices';
 
 
@@ -35,9 +25,6 @@ const searchSlice = createSlice({
     name: "search",
     initialState: INITIAL_STATE,
     reducers: {
-        // searchIcon: (state) => {
-        //     state.searchList
-        // }
     }, extraReducers(builder) {
         builder.addCase(getSearch.pending, (state, action) => {
             state.status = "pending";
@@ -54,5 +41,4 @@ const searchSlice = createSlice({
 
 });
 
-// export const { searchIcon } = searchSlice.actions;
 export default searchSlice.reducer;
